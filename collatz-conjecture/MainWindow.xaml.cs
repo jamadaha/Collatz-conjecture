@@ -123,10 +123,10 @@ namespace collatz_conjecture
 			Line line = new Line();
 			line.Stroke = jansLinje.color;
 			line.StrokeThickness = 5;
-			line.X1 = jansLinje.startPos.X + Width / 2;
-			line.Y1 = jansLinje.startPos.Y + Height / 2;
-			line.X2 = jansLinje.endPos.X + Width / 2;
-			line.Y2 = jansLinje.endPos.Y + Height / 2;
+			line.X1 = jansLinje.startPos.X + xPlacementSlider.Value;
+			line.Y1 = jansLinje.startPos.Y + yPlacementSlider.Value;
+			line.X2 = jansLinje.endPos.X + xPlacementSlider.Value;
+			line.Y2 = jansLinje.endPos.Y + yPlacementSlider.Value;
 			//line.HorizontalAlignment = HorizontalAlignment.Center;
 			//line.VerticalAlignment = VerticalAlignment.Center;
 			//root.Children.Add(line);
@@ -274,6 +274,11 @@ namespace collatz_conjecture
 				negRot = int.Parse(text);
 				GenerateNewTree();
 			}
+		}
+
+		private void OnPlacementSliderChange(object sender, RoutedPropertyChangedEventArgs<double> e)
+		{
+			GenerateNewTree();
 		}
 	}
 }

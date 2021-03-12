@@ -19,6 +19,8 @@
 			<RowDefinition Height="30"/>
 			<RowDefinition Height="30"/>
 			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 
@@ -53,6 +55,30 @@
 				 PreviewTextInput="ValdlidateRotationChange" TextChanged="OnPosRotationChange"
 				 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
 				 Grid.Column="1" Grid.Row="3"/>
+
+		<Label Content="xPlacement"
+			   Grid.Column="0" Grid.Row="5"
+			   Grid.ColumnSpan="2"/>
+
+		<Slider Name="xPlacementSlider"
+				Orientation="Horizontal" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"
+				Value="960" Minimum="0" Maximum="1920" 
+				TickFrequency="10"
+				ValueChanged="OnPlacementSliderChange"
+				Grid.Column="0" Grid.Row="6"
+				Grid.ColumnSpan="1"/>
+
+		<Label Content="yPlacement"
+			   Grid.Column="1" Grid.Row="5"
+			   Grid.ColumnSpan="2"/>
+
+		<Slider Name="yPlacementSlider"
+				Orientation="Horizontal" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"
+				Value="510" Minimum="0" Maximum="1020" 
+				TickFrequency="10"
+				ValueChanged="OnPlacementSliderChange"
+				Grid.Column="1" Grid.Row="6"
+				Grid.ColumnSpan="1"/>
 		
 	</Grid>
 
