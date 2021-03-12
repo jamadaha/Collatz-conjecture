@@ -1,0 +1,59 @@
+﻿<Window x:Class="collatz_conjecture.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:collatz_conjecture"
+        mc:Ignorable="d"
+		Height="1080"
+		Width="1920"
+        Title="MainWindow">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="100"/>
+			<ColumnDefinition Width="100"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Canvas Name="root" Grid.ColumnSpan="3" Grid.RowSpan="5"/>
+
+		<Label Content="Branch Count"
+			   Grid.Column="0" Grid.Row="0"
+			   Grid.ColumnSpan="2"/>
+		
+		<Slider Name="BranchCountSlider"
+				Orientation="Horizontal" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"
+				Value="1" Minimum="1" Maximum="100" 
+				TickFrequency="10"
+				ValueChanged="OnBranchCountChange"
+				Grid.Column="0" Grid.Row="1"
+				Grid.ColumnSpan="2"/>
+
+		<Label Content="NegRot"
+			   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+			   Grid.Column="0" Grid.Row="2"/>
+		
+		<TextBox Name="NegRot" Text="5" TextAlignment="Center"
+				 PreviewTextInput="ValdlidateRotationChange" TextChanged="OnNegRotationChange"
+				 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+				 Grid.Column="0" Grid.Row="3"/>
+		
+		<Label Content="PosRot"
+			   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+			   Grid.Column="1" Grid.Row="2"/>
+		
+		<TextBox Name="PosRot" Text="10" TextAlignment="Center"
+				 PreviewTextInput="ValdlidateRotationChange" TextChanged="OnPosRotationChange"
+				 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+				 Grid.Column="1" Grid.Row="3"/>
+		
+	</Grid>
+
+</Window>
