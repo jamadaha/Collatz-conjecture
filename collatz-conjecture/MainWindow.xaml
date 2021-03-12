@@ -7,8 +7,11 @@
         mc:Ignorable="d"
 		Height="1080"
 		Width="1920"
-        Title="MainWindow">
-	<Grid>
+        Title="MainWindow"
+		KeyDown="Grid_KeyDown">
+	<Grid
+		Name="MainGrid"
+		>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="100"/>
 			<ColumnDefinition Width="100"/>

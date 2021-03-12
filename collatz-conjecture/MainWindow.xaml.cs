@@ -280,5 +280,19 @@ namespace collatz_conjecture
 		{
 			GenerateNewTree();
 		}
+
+		private void Grid_KeyDown(object sender, KeyEventArgs e)
+		{
+			if(e.Key == Key.F1)
+			{
+				foreach(UIElement item in MainGrid.Children)
+				{
+					if (!(item is Canvas))
+						item.Visibility = (item.Visibility == Visibility.Visible) ? Visibility.Hidden : Visibility.Visible;
+				}
+				root.Visibility = Visibility.Visible;
+			}
+				
+		}
 	}
 }
